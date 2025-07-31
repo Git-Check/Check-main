@@ -69,7 +69,7 @@ export default function LoginPage() {
       const userSnap = await getDoc(userRef);
 
       if (userSnap.exists()) {
-        toast.success("เข้าสู่ระบบสำเร็จรรรรรรรรร!!", { style: { color: '#22c55e' } });
+        toast.success("เข้าสู่ระบบสำเร็จแล้วว!!", { style: { color: '#22c55e' } });
         router.push("/dashboard");
       } else {
         router.push("/loginregister");
