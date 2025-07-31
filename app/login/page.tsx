@@ -130,7 +130,7 @@ export default function LoginPage() {
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-8">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">เข้าสู่ระบบ</h1>
-            <p className="text-gray-600">ยินดีต้อนรับกลับมา</p>
+            <p className="text-gray-600">ยินดีต้อนรับกลับมาครับ</p>
           </div>
 
           {error && (
