@@ -77,7 +77,7 @@ export default function LoginPage() {
     } catch (err) {
       // ✅ แก้ไข: ใช้ proper type แทน any
       let errorMessage = "เกิดข้อผิดพลาดในการเข้าสู่ระบบด้วย Google";
-      
+
       if (err instanceof FirebaseError) {
         switch (err.code) {
           case 'auth/cancelled-popup-request':
@@ -95,7 +95,7 @@ export default function LoginPage() {
       } else if (err instanceof Error) {
         errorMessage = `เกิดข้อผิดพลาดในการเข้าสู่ระบบด้วย Google: ${err.message}`;
       }
-      
+
       setError(errorMessage);
       await signOut(auth);
     } finally {
@@ -142,9 +142,8 @@ export default function LoginPage() {
           <Button
             onClick={handleGoogleLogin}
             disabled={isLoggingInGoogle}
-            className={`cursor-pointer w-full flex items-center justify-center py-3 px-4 border border-gray-200 rounded-xl shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 mb-6 ${
-              isLoggingInGoogle ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-md'
-            }`}
+            className={`cursor-pointer w-full flex items-center justify-center py-3 px-4 border border-gray-200 rounded-xl shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 mb-6 ${isLoggingInGoogle ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-md'
+              }`}
           >
             <Image src="/assets/images/Google.png" alt="Google" width={20} height={20} className="mr-3" />
             {isLoggingInGoogle && <Loader2Icon className="animate-spin" />}
@@ -161,24 +160,26 @@ export default function LoginPage() {
           </div>
 
           <div className="space-y-6">
-            <div>
+            <div className='space-y-3'>
               <Label htmlFor="email">อีเมล</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                placeholder="กรอกอีเมลของคุณ" 
-                value={email} 
+              <Input
+                className='rounded-2xl'
+                id="email"
+                type="email"
+                placeholder="กรอกอีเมลของคุณ"
+                value={email}
                 onChange={handleEmailChange}
               />
             </div>
 
-            <div>
+            <div className='space-y-3'>
               <Label htmlFor="password">รหัสผ่าน</Label>
-              <Input 
-                id="password" 
-                type="password" 
-                placeholder="กรอกรหัสผ่านของคุณ" 
-                value={password} 
+              <Input
+                className='rounded-2xl'
+                id="password"
+                type="password"
+                placeholder="กรอกรหัสผ่านของคุณ"
+                value={password}
                 onChange={handlePasswordChange}
               />
             </div>
