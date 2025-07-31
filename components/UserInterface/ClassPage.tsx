@@ -124,6 +124,7 @@ const ClassPage = ({ onSelectClass }: ClassPageProps) => {
                           </div>
                           <div>
                             <p className="truncate w-full max-w-[80px] text-base md:max-w-full text-purple-500">{cls.owner_email}</p>
+                            <p className="truncate w-full max-w-[80px] text-base md:max-w-full text-purple-500">{cls.checkedInCount}</p>
                           </div>
                         </div>
                       </div>

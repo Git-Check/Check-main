@@ -90,6 +90,7 @@ const MyClassPage = ({ onSelectClass }: MyClassPageProps) => {
                     }}
                   >
                     <span className="text-lg font-semibold text-purple-800">{cls.name}</span>
+                    <span className="text-lg font-semibold text-purple-800">{cls.checkedInCount}</span>
                     <div className="bg-purple-500 text-white text-4xl font-bold w-12 h-12 flex justify-center rounded-full shadow-lg">
                       {cls.name.charAt(0)}
                     </div>

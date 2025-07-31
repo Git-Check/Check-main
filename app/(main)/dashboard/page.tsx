@@ -8,12 +8,11 @@ import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { getFingerprint } from '@/utils/getFingerprint';
-
 import { ClassData } from '@/types/classDetailTypes';
 import AttendanceSummaryModal from '@/components/UserInterface/AttenSummary';
 import ClassSection from '@/components/UserInterface/ClassSection';
 import AddClassPopup from '@/components/FromUser/ButtonCreate';
-import { Loader } from 'lucide-react';
+import Loader from '@/components/Loader/Loader';
 
 export default function DashboardPage() {
   const [currectPang, setCurrectPang] = useState<'myclass' | 'class' | 'view'>('myclass');
@@ -159,8 +158,8 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <div className="flex justify-center h-screen">
-        <div className="flex flex-col gap-4 mt-15 xl:flex-row">
+      <div className="flex justify-center">
+        <div className="flex flex-col gap-4 xl:flex-row">
           <div className="md:hidden flex items-center justify-center">
             {currectPang !== 'view' && (
               <div className="max-h-fit">
@@ -169,7 +168,7 @@ export default function DashboardPage() {
             )}
           </div>
           <div className="flex flex-col gap-y-4">
-            <div className="flex max-h-fit items-center justify-center">
+            <div className="flex items-center justify-center">
               <ClassSection
                 onPageChange={handlePageChange}
                 onClassSelect={handleClassSelect}
